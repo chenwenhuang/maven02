@@ -1,0 +1,26 @@
+package com.tgb.web.controller.annotation;
+
+import com.alibaba.dubbo.demo.DemoService;
+
+public class SpringManager implements ISpring{
+	private DemoService demoService;
+	
+
+	public DemoService getDemoService() {
+		return demoService;
+	}
+
+
+	public void setDemoService(DemoService demoService) {
+		this.demoService = demoService;
+	}
+
+
+	public String get() {
+		//调用远程服务
+		System.out.println(demoService.sayHello("world"));
+		System.out.println("---i am SpringManager---");
+		return "i am getMethod";
+	}
+
+}
